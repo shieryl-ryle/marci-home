@@ -33,10 +33,7 @@ export default function HomePage() {
       {/* Hero Section with Search Listings */}
       <section id="home" className="relative min-h-screen flex items-center">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/assets/header-image.png')`,
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/assets/header-image.png')]"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-primary/30"></div>
         </div>
@@ -376,9 +373,9 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {/* Location */}
                 <div>
-                  <label className="block text-sm font-mono font-medium text-foreground mb-3">Location</label>
+                  <label htmlFor="search-location" className="block text-sm font-mono font-medium text-foreground mb-3">Location</label>
                   <div className="relative">
-                    <select className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
+                    <select id="search-location" className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
                       <option value="">Select Location</option>
                       <option value="pahrump">Pahrump</option>
                       <option value="las-vegas">Las Vegas</option>
@@ -390,9 +387,9 @@ export default function HomePage() {
 
                 {/* Type */}
                 <div>
-                  <label className="block text-sm font-mono font-medium text-foreground mb-3">Type</label>
+                  <label htmlFor="search-type" className="block text-sm font-mono font-medium text-foreground mb-3">Type</label>
                   <div className="relative">
-                    <select className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
+                    <select id="search-type" className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
                       <option value="">Property Type</option>
                       <option value="house">House</option>
                       <option value="condo">Condo</option>
@@ -404,9 +401,9 @@ export default function HomePage() {
 
                 {/* Sort By */}
                 <div>
-                  <label className="block text-sm font-mono font-medium text-foreground mb-3">Sort By</label>
+                  <label htmlFor="search-sort" className="block text-sm font-mono font-medium text-foreground mb-3">Sort By</label>
                   <div className="relative">
-                    <select className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
+                    <select id="search-sort" className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
                       <option value="">Sort Options</option>
                       <option value="price-low">Price: Low to High</option>
                       <option value="price-high">Price: High to Low</option>
@@ -420,9 +417,9 @@ export default function HomePage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 {/* Bedrooms */}
                 <div>
-                  <label className="block text-sm font-mono font-medium text-foreground mb-3">Bedrooms</label>
+                  <label htmlFor="search-bedrooms" className="block text-sm font-mono font-medium text-foreground mb-3">Bedrooms</label>
                   <div className="relative">
-                    <select className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
+                    <select id="search-bedrooms" className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
                       <option value="">Any Number</option>
                       <option value="1">1+</option>
                       <option value="2">2+</option>
@@ -435,9 +432,9 @@ export default function HomePage() {
 
                 {/* Baths */}
                 <div>
-                  <label className="block text-sm font-mono font-medium text-foreground mb-3">Baths</label>
+                  <label htmlFor="search-baths" className="block text-sm font-mono font-medium text-foreground mb-3">Baths</label>
                   <div className="relative">
-                    <select className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
+                    <select id="search-baths" className="w-full p-4 border border-border rounded-lg bg-white text-foreground appearance-none cursor-pointer focus:ring-2 focus:ring-accent focus:border-accent">
                       <option value="">Any Number</option>
                       <option value="1">1+</option>
                       <option value="2">2+</option>

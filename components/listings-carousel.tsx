@@ -72,6 +72,15 @@ const properties: Property[] = [
 export function ListingsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const translateClasses = [
+    "translate-x-0",
+    "-translate-x-[33.333%]",
+    "-translate-x-[66.666%]",
+    "-translate-x-[99.999%]",
+  ] as const
+
+  const translateClass = translateClasses[currentIndex] || "translate-x-0"
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % Math.max(1, properties.length - 2))
   }
@@ -85,8 +94,7 @@ export function ListingsCarousel() {
       {/* Carousel Container */}
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-300 ease-in-out gap-6"
-          style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
+          className={`flex transition-transform duration-300 ease-in-out gap-6 will-change-transform ${translateClass}`}
         >
           {properties.map((property) => (
             <div key={property.id} className="flex-none w-full md:w-1/2 lg:w-1/3">
@@ -172,6 +180,7 @@ export function ListingsCarousel() {
         {Array.from({ length: Math.max(1, properties.length - 2) }).map((_, index) => (
           <button
             key={index}
+            aria-label={`Go to slide ${index + 1}`}
             className={`h-2 w-2 rounded-full transition-colors ${
               index === currentIndex ? "bg-accent" : "bg-muted-foreground/30"
             }`}
