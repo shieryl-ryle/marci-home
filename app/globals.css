@@ -1,26 +1,200 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Updated to elegant real estate color palette with deep navy and gold */
+  --background: #faf9f6; /* Off-white background */
+  --foreground: #2b2b2b; /* Charcoal ink for text */
+  --card: #ffffff; /* Pure white cards */
+  --card-foreground: #2b2b2b; /* Charcoal card text */
+  --popover: #ffffff; /* White popover background */
+  --popover-foreground: #2b2b2b; /* Charcoal popover text */
+  --primary: #1f3c56; /* Deep navy primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #d4a017; /* Gold secondary/accent */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #f5f5f5; /* Light gray background */
+  --muted-foreground: #6b7280; /* Gray-500 for muted text */
+  --accent: #d4a017; /* Gold accent color */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #dc2626; /* Red-600 for errors */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e6e8eb; /* Light gray dividers */
+  --input: #ffffff; /* White input background */
+  --ring: rgba(212, 160, 23, 0.3); /* Gold focus ring */
+  --chart-1: #1f3c56; /* Navy chart color */
+  --chart-2: #d4a017; /* Gold chart color */
+  --chart-3: #dc2626; /* Red chart color */
+  --chart-4: #059669; /* Emerald chart color */
+  --chart-5: #7c3aed; /* Purple chart color */
+  --radius: 0.75rem; /* 12px elegant radius */
+  --sidebar: #ffffff; /* White sidebar */
+  --sidebar-foreground: #2b2b2b; /* Dark sidebar text */
+  --sidebar-primary: #f5f5f5; /* Light sidebar sections */
+  --sidebar-primary-foreground: #2b2b2b; /* Dark sidebar primary text */
+  --sidebar-accent: #d4a017; /* Gold sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #e6e8eb; /* Gray sidebar borders */
+  --sidebar-ring: rgba(212, 160, 23, 0.3); /* Gold sidebar focus */
+}
+
+.dark {
+  --background: #1a1a1a; /* Dark background */
+  --foreground: #faf9f6; /* Off-white text */
+  --card: #2b2b2b; /* Dark cards */
+  --card-foreground: #faf9f6; /* Light card text */
+  --popover: #1a1a1a; /* Dark popover */
+  --popover-foreground: #faf9f6; /* Light popover text */
+  --primary: #1f3c56; /* Consistent primary */
+  --primary-foreground: #ffffff; /* White primary text */
+  --secondary: #d4a017; /* Consistent secondary */
+  --secondary-foreground: #ffffff; /* White secondary text */
+  --muted: #2b2b2b; /* Dark muted background */
+  --muted-foreground: #9ca3af; /* Gray-400 muted text */
+  --accent: #d4a017; /* Consistent accent */
+  --accent-foreground: #ffffff; /* White accent text */
+  --destructive: #dc2626; /* Consistent destructive */
+  --destructive-foreground: #ffffff; /* White destructive text */
+  --border: #374151; /* Dark borders */
+  --input: #2b2b2b; /* Dark input background */
+  --ring: rgba(212, 160, 23, 0.3); /* Consistent focus ring */
+  --chart-1: #1f3c56;
+  --chart-2: #d4a017;
+  --chart-3: #dc2626;
+  --chart-4: #059669;
+  --chart-5: #7c3aed;
+  --sidebar: #2b2b2b;
+  --sidebar-foreground: #faf9f6;
+  --sidebar-primary: #374151;
+  --sidebar-primary-foreground: #faf9f6;
+  --sidebar-accent: #d4a017;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: rgba(212, 160, 23, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Updated to elegant typography with Playfair Display, Montserrat, and Inter */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "Montserrat", ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Enhanced typography scale for elegant real estate design */
+  .container {
+    @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .display-1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
+  }
+
+  .heading-1 {
+    @apply text-4xl md:text-5xl font-serif font-bold tracking-tight;
+    color: var(--color-primary);
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-serif font-bold tracking-tight;
+    color: var(--color-primary);
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-serif font-semibold tracking-tight;
+    color: var(--color-primary);
+  }
+
+  .subheading {
+    @apply text-xl md:text-2xl font-mono font-medium tracking-wide;
+    color: var(--color-accent);
+  }
+
+  .body-large {
+    @apply text-lg leading-relaxed font-sans;
+    color: var(--color-foreground);
+  }
+
+  .body {
+    @apply text-base leading-relaxed font-sans;
+    color: var(--color-foreground);
+  }
+
+  .body-small {
+    @apply text-sm leading-relaxed font-sans;
+    color: var(--color-foreground);
+  }
+
+  /* Added elegant spacing and component utilities */
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  .elegant-card {
+    @apply bg-card border border-border/30 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300;
+  }
+
+  .elegant-button {
+    @apply px-8 py-4 rounded-xl font-mono font-semibold transition-all duration-300 hover:scale-105 shadow-lg;
+  }
+
+  .elegant-button:hover {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+  }
 }
