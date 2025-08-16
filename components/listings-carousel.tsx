@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Bed, Bath, Square, Eye, Heart, Share2, ChevronLeft, ChevronRight } from "lucide-react"
@@ -100,9 +101,11 @@ export function ListingsCarousel() {
             <div key={property.id} className="flex-none w-full md:w-1/2 lg:w-1/3">
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 <div className="relative">
-                  <img
+                  <Image
                     src="/assets/listings-carousel/image.png"
                     alt={property.address}
+                    width={600}
+                    height={480}
                     className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-bold shadow-lg">

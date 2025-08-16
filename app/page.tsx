@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -89,16 +90,19 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left">
               <div className="relative inline-block mb-8">
-                <img
+                <Image
                   src="/assets/marci-image.png"
                   alt="Marci Metzger - Pahrump Realtor"
+                  width={224}
+                  height={224}
                   className="w-56 h-56 rounded-full object-cover shadow-2xl border-4 border-background"
+                  priority
                 />
                 <div className="absolute inset-0 rounded-full ring-4 ring-accent/20"></div>
               </div>
               <h2 className="heading-1 text-foreground mb-8">Why Marci</h2>
               <p className="body-large text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Hi, I'm Marci—your local Realtor. For nearly three decades I've helped buyers and sellers make
+                Hi, I&apos;m Marci—your local Realtor. For nearly three decades I&apos;ve helped buyers and sellers make
                 confident moves with clear guidance, strong negotiation, and a trusted network.
               </p>
             </div>
@@ -195,7 +199,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-serif font-semibold text-foreground mb-4">Selling & Home Valuation</h3>
                 <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                  Strategic marketing and accurate pricing to maximize your home's value and sell quickly.
+                  Strategic marketing and accurate pricing to maximize your home&apos;s value and sell quickly.
                 </p>
                 <Button
                   variant="ghost"
@@ -268,9 +272,11 @@ export default function HomePage() {
               { src: "/assets/gallery/pahrump-residential.png", alt: "Community spaces", caption: "Family-friendly spaces" },
             ].map((image, index) => (
               <div key={index} className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg">
-                <img
+                <Image
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
+                  width={600}
+                  height={600}
                   className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -295,10 +301,12 @@ export default function HomePage() {
           {/* Top Content - Sales Performance */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <img
+              <Image
                 src="/assets/modern-kitchen-interior.png"
                 alt="Modern kitchen interior with white countertops and pendant lights"
-                className="rounded-2xl shadow-2xl w-full"
+                width={1200}
+                height={800}
+                className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
             <div className="text-center lg:text-left">
@@ -316,17 +324,19 @@ export default function HomePage() {
           {/* Bottom Content - Don't Just List It */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-center lg:text-left lg:order-1">
-              <h3 className="heading-2 text-foreground mb-8">Don't Just List it...</h3>
+              <h3 className="heading-2 text-foreground mb-8">Don&apos;t Just List it...</h3>
               <p className="body-large text-muted-foreground leading-relaxed">
                 Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every possible
                 buyer, getting you top dollar for your home.
               </p>
             </div>
             <div className="lg:order-2">
-              <img
+              <Image
                 src="/assets/luxury-home-exterior.png"
                 alt="Luxury home exterior with pool and mountain views"
-                className="rounded-2xl shadow-2xl w-full"
+                width={1200}
+                height={800}
+                className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
           </div>
@@ -481,9 +491,9 @@ export default function HomePage() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="heading-1 text-foreground mb-6">What Clients Say</h2>
-            <p className="body-large text-muted-foreground">
-              Don't just take our word for it - hear from satisfied homeowners.
-            </p>
+              <p className="body-large text-muted-foreground">
+                Don&apos;t just take our word for it - hear from satisfied homeowners.
+              </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -516,7 +526,7 @@ export default function HomePage() {
                       <Star key={i} className="h-5 w-5 fill-accent text-accent" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+                  <p className="text-muted-foreground mb-6 italic leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
                   <div>
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
@@ -535,7 +545,7 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <h2 className="heading-1 text-foreground mb-6">Get In Touch</h2>
               <p className="body-large text-muted-foreground">
-                Ready to start your real estate journey? Let's discuss your needs.
+                Ready to start your real estate journey? Let&apos;s discuss your needs.
               </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-16">
